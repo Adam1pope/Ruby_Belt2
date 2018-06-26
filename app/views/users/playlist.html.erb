@@ -1,0 +1,21 @@
+<h1><%= @user.first_name %><%= @user.last_name %> Playlist</h1>
+
+<table>
+	<tr>
+	    <th>Artist</th>
+	    <th>Title</th>		
+	    <th>Times Added</th>
+
+  	</tr>
+<% @fav.each do |x| %>
+	<tr>
+		<td><%= x.artist %></td>
+		<td><%= x.title %></td>
+		<td><%= x.count_fav %></td>
+		</td>
+	</tr>
+<% end %>
+</table> 
+
+<h3 align="right"><a href="/songs">Dashboard</a></h3>
+<h3 align="right"><a href="/sessions">Logout</a></h3>

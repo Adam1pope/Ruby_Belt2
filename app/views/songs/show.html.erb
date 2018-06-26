@@ -1,0 +1,21 @@
+<h1>Others who added <%= @song.artist %> - <%= @song.title %></h1>
+
+
+<table>
+	<tr>
+	    <th>Name</th>
+	    <th>Times Added</th>		
+  	</tr>
+<% @userfavs.each do |x| %>
+	<tr>
+		<td><a href='/users/<%= x.user_id %>'><%= x.first_name %> <%= x.last_name %></td>
+		<td><%= x.count_fav%></td>
+	</tr>
+<% end %>
+</table> 
+
+
+
+
+<h3 align="right"><a href="/songs">Dashboard</a></h3>
+<h3 align="right"><a href="/sessions">Logout</a></h3>

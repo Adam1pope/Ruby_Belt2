@@ -1,0 +1,55 @@
+<h4>Register</h4>
+
+
+  <div>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><font color= "red"><%= error %></font></p>
+      <% end%>
+    <% end %>
+  </div>
+
+
+
+<form action ="/users" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+
+	<label>First Name </label>
+	<input type="text" name="user[first_name]"/>
+
+	<label>Last Name </label>
+	<input type="text" name="user[last_name]"/>
+
+	<label>Email </label>
+	<input type="email" name="user[email]"/>
+
+	<label>Password </label>
+	<input type="password" name="user[password]"/>
+
+	<button type="submit">Register</button>
+	
+</form>
+
+
+
+<h4>Login</h4>
+<form action ="/sessions" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+
+
+	<label>Email </label>
+	<input type="email" name="email"/>
+
+	<label>Password </label>
+	<input type="password" name="password"/>
+
+	<button type="submit">Login</button>
+
+</form>	
+
+
+ <div>
+    <% if flash[:login_errors] %>
+      <h3><font color = "red"> <%= flash[:login_errors]%></font> </h3>
+      <%end%>
+  </div>    
